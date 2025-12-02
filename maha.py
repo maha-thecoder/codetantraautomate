@@ -10,7 +10,7 @@ import string
 
 pyautogui.FAILSAFE = True
 
-def random_delay(min_delay=0.12, max_delay=0.25):
+def random_delay(min_delay=0.10, max_delay=0.20):
     return random.uniform(min_delay, max_delay)
 
 def occasionally(probability):
@@ -22,8 +22,8 @@ def introduce_typo(char_set=string.ascii_lowercase):
 def human_type(
     text,
     initial_delay=3.0,
-    min_char_delay=0.12,   # much slower
-    max_char_delay=0.25,   # slower
+    min_char_delay=0.10,   # much slower
+    max_char_delay=0.20,   # slower
     mistake_rate=0.03,
     backspace_chance_after_mistake=1.0,
     word_pause_chance=0.20,
@@ -86,23 +86,9 @@ def human_type(
 
 if __name__ == "__main__":
     sample_text = (
-     "    int printed = 0;\n"
-    "    for(i = 0; i < n; i++)\n"
-    "    {\n"
-    "        if(a[i] % 2 == 0)\n"
-    "        {\n"
-    "            printf(\"%d \", a[i]);\n"
-    "            count++;\n"
-    "            printed = 1;\n"
-    "        }\n"
-    "    }\n"
-    "\n"
-    "    if(printed == 0)\n"
-    "    {\n"
-    "        printf(\"Nil\");\n"
-    "    }\n"
-    "\n"
-  
+     
+    "        printf(\"Arguments passed through command line are not equal to 4\");\n"
+
     )
 
     human_type(
